@@ -48,6 +48,7 @@ export class Batchs3Stack extends Stack {
       },
       timeToLiveAttribute: 'expiration',
       billing: Billing.onDemand(),
+      removalPolicy: RemovalPolicy.DESTROY,
     });
     table.grantReadWriteData(fn);
     fn.addEnvironment('IDEMPOTENCY_TABLE_NAME', table.tableName);
