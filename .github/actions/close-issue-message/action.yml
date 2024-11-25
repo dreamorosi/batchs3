@@ -17,5 +17,4 @@ runs:
       shell: bash
       env:
         GITHUB_TOKEN: ${{ inputs.repo-token }}
-        OWNER: ${{ github.repository_owner }}
-        REPO: ${{ github.event.repository.name }}
+        GH_REPO: ${{ github.repository_owner }}/${{ github.event.repository.name }}
